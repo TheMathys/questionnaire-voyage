@@ -19,7 +19,7 @@ export function Header() {
     <header className="no-print sticky top-0 z-40 border-b border-trib-border/80 bg-[color-mix(in_srgb,var(--color-trib-background)_88%,transparent)] backdrop-blur-md">
       <div className="trib-container flex h-[4.5rem] items-center justify-between gap-4 sm:h-20">
         <Link to="/" aria-label="Accueil TribTravel">
-          <Logo />
+          <Logo size="lg" />
         </Link>
 
         {isHome && (

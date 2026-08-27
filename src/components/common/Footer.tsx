@@ -8,7 +8,6 @@ export function Footer() {
         <div>
           <Logo />
           <p className="mt-3 max-w-sm text-sm text-trib-muted">{SLOGAN}</p>
-          <p className="mt-4 text-sm font-medium text-trib-ink">Projet étudiant — Démonstration</p>
         </div>
         <div className="text-sm text-trib-muted">
           <p className="font-semibold text-trib-ink">Données & attributions</p>
