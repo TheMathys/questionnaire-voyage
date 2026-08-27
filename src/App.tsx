@@ -44,7 +44,9 @@ function AnalysisRoute() {
 
   useEffect(() => {
     if (!hydrated || started.current) return
+    if (sessionStorage.getItem('tribtravel-analyzing') === '1') return
     started.current = true
+    sessionStorage.setItem('tribtravel-analyzing', '1')
 
     const minDelay = new Promise((r) => setTimeout(r, 1800))
 
@@ -53,14 +55,17 @@ function AnalysisRoute() {
         const [trip] = await Promise.all([buildTripResult(profile), minDelay])
         setResult(trip)
         setReady(true)
+        sessionStorage.removeItem('tribtravel-analyzing')
         window.setTimeout(() => navigate('/resultat'), 400)
       } catch {
         try {
           const trip = await buildTripResult(profile)
           setResult(trip)
           setReady(true)
+          sessionStorage.removeItem('tribtravel-analyzing')
           navigate('/resultat')
         } catch {
+          sessionStorage.removeItem('tribtravel-analyzing')
           navigate('/questionnaire')
         }
       }
