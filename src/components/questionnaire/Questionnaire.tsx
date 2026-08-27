@@ -9,6 +9,7 @@ import type { TravelProfile } from '../../types/trip'
 import { StepTribe } from './steps/StepTribe'
 import { StepDeparture } from './steps/StepDeparture'
 import { StepDestination } from './steps/StepDestination'
+import { StepHorizon } from './steps/StepHorizon'
 import { StepThemes } from './steps/StepThemes'
 import { StepPace } from './steps/StepPace'
 import { StepTransport } from './steps/StepTransport'
@@ -63,13 +64,14 @@ export function Questionnaire({
     <StepTribe key={0} profile={profile} update={update} />,
     <StepDeparture key={1} profile={profile} update={update} />,
     <StepDestination key={2} profile={profile} update={update} />,
-    <StepThemes key={3} profile={profile} update={update} />,
-    <StepPace key={4} profile={profile} update={update} />,
-    <StepTransport key={5} profile={profile} update={update} />,
-    <StepAccommodation key={6} profile={profile} update={update} />,
-    <StepExperiences key={7} profile={profile} update={update} />,
-    <StepConstraints key={8} profile={profile} update={update} />,
-    <StepBudget key={9} profile={profile} update={update} />,
+    <StepHorizon key={3} profile={profile} update={update} />,
+    <StepThemes key={4} profile={profile} update={update} />,
+    <StepPace key={5} profile={profile} update={update} />,
+    <StepTransport key={6} profile={profile} update={update} />,
+    <StepAccommodation key={7} profile={profile} update={update} />,
+    <StepExperiences key={8} profile={profile} update={update} />,
+    <StepConstraints key={9} profile={profile} update={update} />,
+    <StepBudget key={10} profile={profile} update={update} />,
   ]
 
   return (

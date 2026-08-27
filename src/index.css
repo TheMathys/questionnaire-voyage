@@ -8,6 +8,7 @@
   --color-trib-ink: #1f1f1f;
   --color-trib-muted: #5c5c5c;
   --color-trib-background: #fffaf8;
+  --color-trib-cream: #fff3ef;
   --color-trib-white: #ffffff;
   --color-trib-border: rgba(31, 31, 31, 0.08);
   --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
@@ -45,8 +46,9 @@
 
   .trib-gradient-hero {
     background:
-      radial-gradient(ellipse 80% 60% at 90% 10%, color-mix(in srgb, var(--color-trib-yellow) 35%, transparent), transparent 55%),
-      radial-gradient(ellipse 70% 50% at 0% 80%, color-mix(in srgb, var(--color-trib-coral) 28%, transparent), transparent 50%),
+      radial-gradient(ellipse 80% 60% at 90% 10%, color-mix(in srgb, var(--color-trib-yellow) 38%, transparent), transparent 55%),
+      radial-gradient(ellipse 70% 50% at 0% 80%, color-mix(in srgb, var(--color-trib-coral) 30%, transparent), transparent 50%),
+      radial-gradient(ellipse 50% 40% at 50% 0%, color-mix(in srgb, var(--color-trib-red) 8%, transparent), transparent 60%),
       linear-gradient(180deg, #fffaf8 0%, #fff3ef 45%, #fffaf8 100%);
   }
 

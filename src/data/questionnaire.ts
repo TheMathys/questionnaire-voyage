@@ -1,6 +1,14 @@
-import type { ActivityId, ComfortLevel, Pace, ThemeId } from '../types/trip'
+import type {
+  ActivityId,
+  ClimatePref,
+  ComfortLevel,
+  DistancePref,
+  Pace,
+  RegionPref,
+  ThemeId,
+} from '../types/trip'
 
-export const TOTAL_STEPS = 10
+export const TOTAL_STEPS = 11
 
 export const THEME_OPTIONS: { id: ThemeId; label: string; description: string }[] = [
   { id: 'detente', label: 'Détente / repos', description: 'Ralentir et se ressourcer' },
@@ -13,6 +21,30 @@ export const THEME_OPTIONS: { id: ThemeId; label: string; description: string }[
   { id: 'roadtrip', label: 'Road trip', description: 'Liberté sur la route' },
   { id: 'luxe', label: 'Luxe / bien-être', description: 'Confort et cocooning' },
   { id: 'immersion', label: 'Immersion locale', description: 'Vivre comme les habitants' },
+]
+
+export const CLIMATE_OPTIONS: { id: ClimatePref; label: string; description: string }[] = [
+  { id: 'chaud', label: 'Chaud / ensoleillé', description: 'Soleil, chaleur, ambiance estivale' },
+  { id: 'tempere', label: 'Tempéré', description: 'Douceur, sans extrêmes' },
+  { id: 'frais', label: 'Frais / grand air', description: 'Montagnes, nord, air vif' },
+  { id: 'indifferent', label: 'Peu importe', description: 'On s’adapte à la destination' },
+]
+
+export const REGION_OPTIONS: { id: RegionPref; label: string; description: string }[] = [
+  { id: 'europe', label: 'Europe', description: 'Villes, campagnes, proches' },
+  { id: 'mediterranee', label: 'Méditerranée', description: 'Mer, villages, soleil' },
+  { id: 'afrique-mo', label: 'Afrique & Moyen-Orient', description: 'Déserts, médinas, safaris' },
+  { id: 'asie', label: 'Asie', description: 'Temples, street food, contrastes' },
+  { id: 'ameriques', label: 'Amériques', description: 'Grands espaces et cultures' },
+  { id: 'iles', label: 'Îles & outre-mer', description: 'Lagon, volcan, lagons' },
+  { id: 'ouvert', label: 'Surprenez-moi', description: 'Aucune limite géographique' },
+]
+
+export const DISTANCE_OPTIONS: { id: DistancePref; label: string; description: string }[] = [
+  { id: 'proche', label: 'Proche (≤ 3 h de vol)', description: 'Europe et alentours' },
+  { id: 'moyen', label: 'Moyen (3–7 h)', description: 'Méditerranée élargie, Afrique du Nord…' },
+  { id: 'loin', label: 'Long-courrier', description: 'Asie, Amériques, Océanie…' },
+  { id: 'ouvert', label: 'Ouvert', description: 'La distance n’est pas un critère' },
 ]
 
 export const PACE_OPTIONS: { id: Pace; label: string; description: string }[] = [
@@ -87,6 +119,7 @@ export const CONSTRAINT_OPTIONS = [
   { id: 'animal', label: 'Voyage avec un animal' },
   { id: 'longs-trajets', label: 'Éviter les longs trajets' },
   { id: 'physique', label: 'Éviter les activités physiques intenses' },
+  { id: 'jetlag', label: 'Éviter le décalage horaire important' },
   { id: 'aucune', label: 'Aucune contrainte particulière' },
 ] as const
 
@@ -120,6 +153,7 @@ export const STEP_TITLES = [
   'Votre tribu',
   'Votre départ',
   'Votre destination',
+  'Votre horizon',
   'Vos envies',
   'Votre rythme',
   'Vos déplacements',
@@ -129,4 +163,4 @@ export const STEP_TITLES = [
   'Votre budget',
 ]
 
-export const STORAGE_KEY = 'tribtravel-profile-v1'
+export const STORAGE_KEY = 'tribtravel-profile-v2'

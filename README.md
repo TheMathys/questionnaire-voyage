@@ -2,7 +2,7 @@
 
 À vous le voyage, à nous l’organisation.
 
-Maquette web complète pour une soutenance hackathon / création d’entreprise : landing, questionnaire personnalisé (10 étapes), analyse de profil, recommandation de destination et road book interactif.
+Maquette web complète pour une soutenance hackathon / création d’entreprise : landing, questionnaire personnalisé (11 étapes), analyse de profil, recommandation de destination et road book interactif.
 
 Stack : **React + Vite + TypeScript + Tailwind CSS v4**.
 
@@ -57,9 +57,9 @@ PEXELS_API_KEY=
 ## Parcours démo
 
 1. Landing → **Créer mon road book**
-2. Questionnaire (10 étapes) — en dev, bouton discret **Profil démo**
+2. Questionnaire (11 étapes, dont climat / zone / distance) — en dev, bouton discret **Profil démo**
 3. Écran d’analyse
-4. Résultat + road book + alternatives
+4. Résultat + road book + alternatives (catalogue 70+ destinations)
 
 ## Crédits données
 

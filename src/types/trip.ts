@@ -3,6 +3,25 @@ export type DestinationMode = 'known' | 'inspire'
 export type Pace = 'doux' | 'equilibre' | 'intense' | 'itinerant'
 export type ComfortLevel = 'essentiel' | 'confortable' | 'haut-de-gamme' | 'exceptionnel'
 export type DataMode = 'live' | 'fallback'
+export type ClimatePref = 'chaud' | 'tempere' | 'frais' | 'indifferent'
+export type RegionPref =
+  | 'europe'
+  | 'mediterranee'
+  | 'afrique-mo'
+  | 'asie'
+  | 'ameriques'
+  | 'iles'
+  | 'ouvert'
+export type DistancePref = 'proche' | 'moyen' | 'loin' | 'ouvert'
+export type ClimateType = 'tropical' | 'mediterraneen' | 'tempere' | 'froid' | 'desertique'
+export type RegionId =
+  | 'europe'
+  | 'mediterranee'
+  | 'afrique-mo'
+  | 'asie'
+  | 'ameriques'
+  | 'iles'
+export type DistanceBand = 'proche' | 'moyen' | 'loin'
 
 export interface Travelers {
   adults: number
@@ -30,6 +49,9 @@ export interface TravelProfile {
   dates: TravelDates
   destinationMode: DestinationMode
   destination?: GeoPlace
+  climatePreference: ClimatePref | ''
+  regionPreferences: RegionPref[]
+  distancePreference: DistancePref | ''
   themes: string[]
   pace: Pace | ''
   transportPreferences: string[]
@@ -85,6 +107,10 @@ export interface Destination {
   approximateCostIndex: 1 | 2 | 3 | 4 | 5
   preferredSeasons: number[]
   transportProfiles: string[]
+  climate: ClimateType
+  region: RegionId
+  distanceBand: DistanceBand
+  offbeat?: boolean
   summary: string
   highlights: string[]
   fallbackImage: string

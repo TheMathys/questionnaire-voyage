@@ -75,7 +75,7 @@ export function LandingPage() {
                 <Button variant="outline">Découvrir le concept</Button>
               </a>
             </div>
-            <p className="mt-4 text-sm text-trib-muted">10 questions · environ 2 minutes</p>
+            <p className="mt-4 text-sm text-trib-muted">11 questions · environ 2 à 3 minutes</p>
             <p className="mt-6 text-sm font-medium text-trib-ink/80">{SLOGAN}</p>
           </div>
 

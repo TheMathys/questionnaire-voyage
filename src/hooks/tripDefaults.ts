@@ -6,6 +6,9 @@ export const defaultProfile = (): TravelProfile => ({
   origin: { label: '' },
   dates: { flexibility: 'fixed' },
   destinationMode: 'inspire',
+  climatePreference: '',
+  regionPreferences: [],
+  distancePreference: '',
   themes: [],
   pace: '',
   transportPreferences: [],
@@ -49,27 +52,34 @@ export function validateStep(step: number, profile: TravelProfile): string | nul
       }
       return null
     case 3:
-      if (profile.themes.length === 0) return 'Sélectionnez au moins une envie.'
+      if (!profile.climatePreference) return 'Choisissez une ambiance climatique.'
+      if (profile.regionPreferences.length === 0) {
+        return 'Sélectionnez au moins une zone géographique (ou « Surprenez-moi »).'
+      }
+      if (!profile.distancePreference) return 'Indiquez votre confort de distance.'
       return null
     case 4:
-      if (!profile.pace) return 'Choisissez votre rythme de voyage.'
+      if (profile.themes.length === 0) return 'Sélectionnez au moins une envie.'
       return null
     case 5:
+      if (!profile.pace) return 'Choisissez votre rythme de voyage.'
+      return null
+    case 6:
       if (profile.transportPreferences.length === 0) {
         return 'Sélectionnez au moins un mode de déplacement.'
       }
       return null
-    case 6:
+    case 7:
       if (profile.accommodationTypes.length === 0) return 'Choisissez un type d’hébergement.'
       if (!profile.comfortLevel) return 'Indiquez votre niveau de confort.'
       return null
-    case 7:
+    case 8:
       if (profile.activities.length === 0) return 'Sélectionnez au moins une expérience.'
       return null
-    case 8:
+    case 9:
       if (profile.constraints.length === 0) return 'Indiquez vos contraintes ou « Aucune ».'
       return null
-    case 9:
+    case 10:
       if (!profile.budgetRange) return 'Choisissez une enveloppe budgétaire.'
       return null
     default:
@@ -88,11 +98,15 @@ export function getDemoProfile(): TravelProfile {
       country: 'France',
     },
     dates: {
-      departure: new Date(Date.now() + 40 * 86400000).toISOString().slice(0, 10),
-      return: new Date(Date.now() + 50 * 86400000).toISOString().slice(0, 10),
+      // Mars : haute saison indicative Costa Rica (cas de test jury)
+      departure: '2027-03-10',
+      return: '2027-03-20',
       flexibility: '2-days',
     },
     destinationMode: 'inspire',
+    climatePreference: 'chaud',
+    regionPreferences: ['ameriques'],
+    distancePreference: 'loin',
     themes: ['nature', 'aventure', 'plage'],
     pace: 'equilibre',
     transportPreferences: ['avion'],
