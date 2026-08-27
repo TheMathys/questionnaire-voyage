@@ -1,1 +1,124 @@
 @import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
+
+@theme {
+  --color-trib-red: #e3432f;
+  --color-trib-coral: #ff8b84;
+  --color-trib-yellow: #fad252;
+  --color-trib-ink: #1f1f1f;
+  --color-trib-muted: #5c5c5c;
+  --color-trib-background: #fffaf8;
+  --color-trib-white: #ffffff;
+  --color-trib-border: rgba(31, 31, 31, 0.08);
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: var(--font-sans);
+    color: var(--color-trib-ink);
+    background: var(--color-trib-background);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--color-trib-yellow);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--color-trib-coral) 40%, white);
+  }
+}
+
+@layer utilities {
+  .trib-container {
+    width: min(1120px, calc(100% - 2rem));
+    margin-inline: auto;
+  }
+
+  .trib-gradient-hero {
+    background:
+      radial-gradient(ellipse 80% 60% at 90% 10%, color-mix(in srgb, var(--color-trib-yellow) 35%, transparent), transparent 55%),
+      radial-gradient(ellipse 70% 50% at 0% 80%, color-mix(in srgb, var(--color-trib-coral) 28%, transparent), transparent 50%),
+      linear-gradient(180deg, #fffaf8 0%, #fff3ef 45%, #fffaf8 100%);
+  }
+
+  .trib-organic {
+    border-radius: 40% 60% 55% 45% / 55% 40% 60% 45%;
+  }
+
+  .trib-card {
+    background: var(--color-trib-white);
+    border: 1px solid var(--color-trib-border);
+    border-radius: 1.25rem;
+    box-shadow: 0 10px 30px rgba(31, 31, 31, 0.04);
+  }
+
+  .trib-fade-in {
+    animation: trib-fade-up 0.55s ease both;
+  }
+
+  .trib-delay-1 { animation-delay: 0.08s; }
+  .trib-delay-2 { animation-delay: 0.16s; }
+  .trib-delay-3 { animation-delay: 0.24s; }
+}
+
+@keyframes trib-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes trib-plane {
+  0% { transform: translateX(-8%) translateY(4px); opacity: 0.4; }
+  50% { opacity: 1; }
+  100% { transform: translateX(8%) translateY(-4px); opacity: 0.4; }
+}
+
+.trib-plane {
+  animation: trib-plane 2.8s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .trib-fade-in,
+  .trib-plane,
+  .trib-progress-fill {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+@media print {
+  header,
+  .no-print,
+  .leaflet-container {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  .trib-card {
+    box-shadow: none;
+    break-inside: avoid;
+  }
+}
