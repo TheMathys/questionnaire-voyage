@@ -34,7 +34,7 @@ const examples = [
     formula: 'Formule culturelle',
     detail: '2 adultes · 8 jours / 7 nuits · Paris → Le Caire',
     budget: 'environ 2 000 € (exemple scolaire)',
-    image: 'https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?w=900&q=80',
+    image: 'https://images.unsplash.com/photo-1595040587796-bc390dee8840?w=900&q=80',
   },
   {
     title: 'Ténérife',

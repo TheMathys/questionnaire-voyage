@@ -45,7 +45,7 @@ export const DESTINATIONS: Destination[] = [
     distanceBand: "moyen",
     summary: "Pyramides, Nil et trésors pharaoniques : l’Égypte invite à une immersion culturelle intense.",
     highlights: ["Pyramides", "Nil", "Louxor", "Musée égyptien"],
-    fallbackImage: "https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?w=1600&q=80",
+    fallbackImage: "https://images.unsplash.com/photo-1595040587796-bc390dee8840?w=1600&q=80",
     fallbackAccommodations: ["Hôtel vue Pyramides", "Bateau-hôtel sur le Nil", "Riad confortable au Caire"],
     fallbackExperiences: [{ title: "Pyramides de Gizeh", description: "Visite guidée des sites pharaoniques.", period: "Matin" }, { title: "Musée égyptien", description: "Trésors millénaires.", period: "Après-midi" }, { title: "Croisière sur le Nil", description: "Temples au fil de l’eau.", period: "Journée" }, { title: "Souk Khan el-Khalili", description: "Ambiance locale.", period: "Soir" }],
     univers: "culturelle",
